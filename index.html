@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard de Animações – Anime.js Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎭 Animation Studio</h1>
+      <p class="subtitle">Crie animações incríveis com Anime.js</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="templates">📚 Templates</button>
+      <button class="tab-btn" data-tab="custom">🎨 Personalizar</button>
+    </div>
+
+    <div class="dashboard">
+      <div class="tab-content active" id="tab-templates">
+        <h2>🎪 Galeria de Animações</h2>
+        <div class="template-gallery" id="templateGallery">
+          <!-- Templates serão inseridos aqui -->
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-custom">
+        <h2>🎨 Crie sua Animação</h2>
+        <div class="controls">
+          <div class="form-section">
+            <div class="form-row">
+              <label>Tipo de Animação:</label>
+              <select id="animType">
+                <option value="translateX">Mover Horizontal</option>
+                <option value="translateY">Mover Vertical</option>
+                <option value="scale">Escalar</option>
+                <option value="rotate">Rotacionar</option>
+                <option value="opacity">Opacidade</option>
+                <option value="backgroundColor">Cor de Fundo</option>
+              </select>
+            </div>
+            
+            <div class="form-row">
+              <label>Valor Inicial:</label>
+              <input type="text" id="startValue" value="0" placeholder="Ex: 0, #ff0000">
+            </div>
+            
+            <div class="form-row">
+              <label>Valor Final:</label>
+              <input type="text" id="endValue" value="100" placeholder="Ex: 100, #00ff00">
+            </div>
+            
+            <div class="form-row">
+              <label>Duração (ms):</label>
+              <input type="range" id="duration" min="100" max="3000" value="1000">
+              <span id="durationValue">1000ms</span>
+            </div>
+            
+            <div class="form-row">
+              <label>Delay (ms):</label>
+              <input type="range" id="delay" min="0" max="2000" value="0">
+              <span id="delayValue">0ms</span>
+            </div>
+            
+            <div class="form-row">
+              <label>Easing:</label>
+              <select id="easing">
+                <option value="easeInOutQuad">Smooth</option>
+                <option value="easeOutBounce">Bounce</option>
+                <option value="easeOutElastic">Elastic</option>
+                <option value="linear">Linear</option>
+                <option value="easeOutBack">Back</option>
+              </select>
+            </div>
+            
+            <div class="form-row">
+              <div class="checkbox-group">
+                <label><input type="checkbox" id="loop"> Loop</label>
+                <label><input type="checkbox" id="alternate"> Alternado</label>
+              </div>
+            </div>
+            
+            <div class="btn-group">
+              <button class="btn btn-primary" id="btnAnimate">▶️ Animar</button>
+              <button class="btn btn-secondary" id="btnReset">🔄 Reset</button>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <div class="preview-area">
+              <div id="previewBox" class="preview-box">🎯</div>
+            </div>
+            
+            <div class="code-area">
+              <label>Código Gerado:</label>
+              <div class="code-container">
+                <div class="code-output" id="codeOutput">// Configure uma animação acima</div>
+                <button class="copy-btn" id="copyBtn">📋 Copiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© VitorNoe 2025</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
