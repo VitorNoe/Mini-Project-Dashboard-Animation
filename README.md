@@ -29,3 +29,5 @@
 - Valores em tempo real nos sliders
 - Cópia fácil do código gerado
 - Design mobile-first
+
+### Link para acessar: https://vitornoe.github.io/Mini-Project-Dashboard-Animation/index.html
